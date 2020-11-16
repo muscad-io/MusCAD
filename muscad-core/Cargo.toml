@@ -1,0 +1,21 @@
+[package]
+name = "muscad-core"
+version = "0.0.1"
+authors = ["elonzyy <elonzyy@pm.me>"]
+edition = "2018"
+
+[features]
+default = []
+serialization = ["serde", "serde_json"]
+
+[dependencies]
+muscad-macro = { path = "./proc_macros" }
+serde_json = { version = "1.0", optional = true }
+serde = { version = "1.0", features = ["derive"], optional = true }
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "vector3d"
+harness = false

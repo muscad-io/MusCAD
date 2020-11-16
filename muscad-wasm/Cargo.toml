@@ -1,0 +1,20 @@
+[package]
+name = "muscad-wasm"
+version = "0.0.1"
+authors = ["elonzyy <elonzyy@pm.me>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+default = ["console_error_panic_hook"]
+
+[dependencies]
+muscad-core = { path = "../muscad-core", features = ["serialization"] }
+muscad-gluon = { path = "../muscad-gluon" }
+wasm-bindgen = "0.2.63"
+console_error_panic_hook = { version = "0.1.6", optional = true }
+wee_alloc = { version = "0.4.5", optional = true }
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }

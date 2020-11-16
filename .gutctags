@@ -1,0 +1,6 @@
+-R
+--exclude=**/node_modules/*
+--exclude=**/dist/*
+--exclude=**/target/*
+--exclude=target/*
+--exclude=.vimrc

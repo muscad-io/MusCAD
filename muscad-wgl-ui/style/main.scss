@@ -1,0 +1,50 @@
+@charset "utf-8";
+@import "~bulma/bulma";
+
+.hero-code {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.controls {
+  height: 80px !important;
+  background: #D3E1E1;
+
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.outputs {
+  background: #F6F8F8;
+  font-size: 14px;
+  font-family: "Source Code Pro", monospace;
+
+  overflow-y: auto;
+
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#canvas_parent {
+  padding: 0;
+}
+
+#editor {
+  height: 100vh;
+  resize: none !important;
+  background: #F6F8F8;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: "Source Code Pro", monospace;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+  tab-size: 4;
+}

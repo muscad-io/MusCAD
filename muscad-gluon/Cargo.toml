@@ -1,0 +1,11 @@
+[package]
+name = "muscad-gluon"
+version = "0.0.1"
+authors = ["elonzyy <elonzyy@pm.me>"]
+edition = "2018"
+
+[dependencies]
+muscad-core = { path = "../muscad-core", features = ["serialization"] }
+gluon = "0.17"
+gluon_vm = "0.17"
+gluon_codegen = "0.17"

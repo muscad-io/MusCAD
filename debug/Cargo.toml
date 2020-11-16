@@ -1,0 +1,12 @@
+[package]
+name = "debug"
+version = "0.0.1"
+authors = ["elonzyy <elonzyy@pm.me>"]
+edition = "2018"
+
+[dependencies]
+muscad-core = { path = "../muscad-core", features = ["serialization"] }
+muscad-gluon = { path = "../muscad-gluon" }
+#muscad-wasm = { path = "../muscad-wasm" }
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }

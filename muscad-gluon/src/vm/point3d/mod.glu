@@ -1,0 +1,29 @@
+let array @ { ? } = import! std.array
+let { Show } = import! std.show
+
+type Point3d = { x: Float, y: Float, z: Float }
+
+let show : Show Point3d = 
+  let show_ pt : Point3d -> String =
+    let x = show pt.x
+    let y = show pt.y
+    let z = show pt.z
+    in
+
+    "Point3d(" ++ x ++ ", " ++ y ++ ", " ++ z ++ ")"
+  in
+  { show = show_ }
+
+let of xs: Array Float -> Point3d = 
+  let index i =
+    let len = array.len xs
+    if i < len then array.index xs i else 0.0
+  in 
+
+  { x = index 0, y = index 1, z = index 2 }
+
+{ 
+  Point3d, 
+  show,
+  of,
+}

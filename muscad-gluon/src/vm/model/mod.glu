@@ -1,0 +1,26 @@
+let prim @ { Model } = import! muscad.model.prim
+
+let { id } = import! std.function
+let { foldr } = import! std.foldable
+let { (<>) } = import! std.semigroup
+let { Traversable } = import! std.traversable
+let { Eff, ? } = import! std.effect
+let { State, send_state, make_call } = import! std.effect.st
+let { Show } = import! std.show
+
+let show : forall s . Show (Model s) = {
+    show = prim.show
+}
+
+let new : forall s . Eff [| st : State s | r |] (Model s) =
+    send_state (make_call prim.new)
+
+let to_array map_inner : [Traversable v] -> (a -> b) -> v a -> Array b = 
+    foldr (\e -> \m -> m <> [map_inner e]) []
+
+let add_face m pts : forall s . [Traversable v] -> [Traversable p] -> 
+  Model s -> v (p Float) -> Eff [| st : State s | r |] () = 
+    let arr_pts = to_array (\pt -> to_array id pt) pts
+    send_state (make_call (\_ -> prim.add_face m arr_pts))
+
+{ show, new, add_face..prim }

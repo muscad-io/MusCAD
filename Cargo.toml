@@ -1,0 +1,12 @@
+[workspace]
+
+members = [
+  "debug",
+  "muscad-core",
+  "muscad-gluon",
+  "muscad-wasm",
+]
+
+
+[profile.release.package.muscad-wasm]
+opt-level = "s"
