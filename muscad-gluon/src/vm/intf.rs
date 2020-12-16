@@ -9,13 +9,15 @@ use gluon::{
 };
 
 fn js_log(s: String) -> IO<()> {
-    println!("{}", s);
+    crate::wasm::log(&s);
 
     IO::Value(())
 }
 
-fn js_draw_model(_m: &Model<S>) -> IO<()> {
-    println!("<draw call>");
+fn js_draw_model(m: &Model<S>) -> IO<()> {
+    let json_str = m.with_inner(|i| serde_json::to_string(&i.0).unwrap());
+
+    crate::wasm::draw_model(&json_str);
 
     IO::Value(())
 }

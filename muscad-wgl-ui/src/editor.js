@@ -18,4 +18,3 @@ export function init(el) {
 export default {
   init,
 }
-

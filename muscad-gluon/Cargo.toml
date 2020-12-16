@@ -4,8 +4,20 @@ version = "0.0.1"
 authors = ["elonzyy <elonzyy@pm.me>"]
 edition = "2018"
 
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = []
+
 [dependencies]
 muscad-core = { path = "../muscad-core", features = ["serialization"] }
 gluon = "0.17"
 gluon_vm = "0.17"
 gluon_codegen = "0.17"
+
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+
+wee_alloc = "0.4"
+wasm-bindgen = "0.2.69"

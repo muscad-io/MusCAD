@@ -4,9 +4,7 @@ members = [
   "debug",
   "muscad-core",
   "muscad-gluon",
-  "muscad-wasm",
 ]
 
-
-[profile.release.package.muscad-wasm]
+[profile.release.package.muscad-gluon]
 opt-level = "s"

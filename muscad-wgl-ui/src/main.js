@@ -1,10 +1,13 @@
 import { store, render, init } from './init'
+
 (async () => {
-  await import('../style/main.scss')
-  await import('./index')
+  try {
+    await import('../style/main.scss')
+    await import('./index')
 
-  init()
-  render()
+    init()
+    render()
+  } catch(e) {
+    console.log(e)
+  }
 })()
-
-

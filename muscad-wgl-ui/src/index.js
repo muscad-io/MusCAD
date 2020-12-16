@@ -1,4 +1,4 @@
-import * as wasm from 'muscad-wasm'
+import * as wasm from 'muscad-gluon'
 
 const vm = wasm.setup_vm()
 
